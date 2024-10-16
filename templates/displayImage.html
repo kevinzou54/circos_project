@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block header %}
+   <h1>{% block title %} Circle Plot {% endblock %} </h1>
+{% endblock %} 
+
+{% block content %} 
+   <img src = "{{url_for('static', filename = 'circos.png')}}" style="width:750px;height:750px;">
+   <form method = "post">
+   <input type = "submit" name = "submit" value="Create another circle plot"/>
+   </form>
+{% endblock %} 

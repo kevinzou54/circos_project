@@ -1,0 +1,83 @@
+\{% extends 'base.html' %}              
+
+{% block header %}
+  <h1>{% block title %}Create a Plot{% endblock %}</h1>
+{% endblock %}  
+
+
+{% block content %}
+  <h1>Description</h1><br>
+  <b>This is a user-friendly online tool to generate circular data visualization for gene</b><br>
+  <b>rearrangements. Simply upload your file, select some parameters, such as radius of the</b><br>
+  <b>Circos and colors of the link, and click on Submit, without the need in downloading or</b><br>
+  <b>installing the Circos software package.</b><br>
+  <br>
+  <br> 
+  <b>The Circos image generated is outputted as a .png and/or .SVG and then be downloaded.</b><br>
+  <br> 
+
+  <form method="post" action="">
+    <br>
+    <b>Radius:</b><br>
+	Radius range (0-1)<br>
+	<br>
+    <input type="text" id="radius" name="radius" value="{{request.form['radius']}}"> </input><br>
+	<br>
+	<br>
+   
+
+    <b>Link Radius:</b><br>
+    <b>The link radius controls the the radius of the inner plot displaying the links.</b><br>
+    <b>The link radius entered will be scaled to the radius of the entire plot</b><br>
+    <b>For example, if the radius of the entire plot is 0.3, and you enter 0.5 for</b><br>
+    <b>the link radius, then the link radius will be 0.15</b><br>
+    <input type = "text" id = "link_radius" name = "link_radius" value = "{{request.form['link_radius']}}"></input><br> 
+   
+
+    <b>Karyotype - Ideogram</b><br>
+    <b>Homo sapiens (GRCh37/hg19)</b><br>
+    <b>For reference instead of using chr# to specify chromosomes, use hs#</b><br>
+    <b>Format: hs1,hs6,hs9</b><br>
+    <b>By default, the entire karyotype will be displayed. If you only want specific chromosomes please enter them here:</b><br>
+    <b>This would display chromosomes 1, 6, and 9</b><br>
+    <textarea id="textdata" name="chromosomes" rows="6" cols="50">{{request.form['chromosomes']}} </textarea><br>
+    
+    <b>Link Data:</b><br>
+	Link format: hsX coord1 coord1 hsY coord2 coord2 color=clr<br>
+	<br>
+	Breakdown of format:<br>
+	<br>
+    <table>
+        <tr>
+            <th colspan="3">Gene 1 coordinates</th>
+	    <th colspan="3">Gene 2 coordinates</th>
+	    <th>Line color</th>
+	</tr>
+	<tr>
+	   <td>   Chromosome #</td>
+	   <td>   start</td>
+	   <td> end</td>
+	   <td>Chromosome #</td>
+	   <td>start</td>
+	   <td>end</td>
+	</tr>
+	<tr>
+	   <td>hs1</td>
+	   <td>10,000</td>
+	   <td>11,000</td>
+	   <td>   hs6</td>
+	   <td>   1,000</td>
+	   <td> 1,000</td>
+	</tr>
+    </table><br>
+    <textarea id="textdata" name="links" rows="11" cols="50">{{request.form['links']}}</textarea><br>
+    Display chromosome bands<input type = "checkbox" id = "bands" name = "bands" value = "bands" checked></input><br>
+    <input type="submit" name="submit">
+    
+  </form>
+
+{% endblock %}
+
+
+
+
