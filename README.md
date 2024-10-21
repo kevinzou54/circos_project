@@ -1,7 +1,9 @@
 # Circos Plot Generation Web App
 
 ## Description
-This project provides an intuitive web interface for generating and visualizing genome data using Circos, an open-source genome visualization tool. The application is built with Flask and Nginx and is containerized with Docker for easy deployment. It allows users to configure Circos plots, submit data for visualization, and interact with the generated plots. The project was deployed using Azure Container Apps, improving cost efficiency and scalability.
+This project provides an intuitive web interface for generating and visualizing genome data using Circos, an open-source genome visualization tool. The application is built with Flask and Nginx and is containerized with Docker for easy deployment. It allows users to configure Circos plots, submit data for visualization, and interact with the generated plots. The project was deployed using Azure Container Apps, improving cost efficiency and scalability. <br/>
+<br/>
+Circos: https://circos.ca/software/download/circos/
 
 ## Features
 Web-based UI: Users can interactively configure and generate Circos plots. <br/>
